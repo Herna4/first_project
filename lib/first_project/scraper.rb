@@ -1,6 +1,6 @@
 class FirstProject::Scraper
 
-  # attr_accessor :name, :available, :url
+   attr_accessor :name, :available, :url
 
   def self.today
     #return a branch of instances of environmment
@@ -11,6 +11,22 @@ class FirstProject::Scraper
       4. Health Science -Still available!
     DOC
 
+    env_1 = self.new
+    env_1.name = "Education"
+    env_1.availability = true
+    env_1.url = "https://www.uopeople.edu/"
+
+    env_2.name = "Business Administration"
+    env_2.availability = true
+    env_2.url = "https://www.uopeople.edu/"
+
+    env_3.name = "Computer Science"
+    env_3.availability = true
+    env_3.url = "https://www.uopeople.edu/"
+
+    env_4.name = "Health Science"
+    env_4.availability = true
+    env_4.url = "https://www.uopeople.edu/"
   end
 
 end
