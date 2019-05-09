@@ -2,7 +2,7 @@ class FirstProject::CLI
 
   def call
     list_courses
-    menu
+    boby
     byebye
   end
 
@@ -15,8 +15,7 @@ class FirstProject::CLI
    end
   end
 
-  def menu
-    # puts "Enter the number of course you would like more info on:"
+  def boby
     input = nil
     while input != "exit"
     puts "Enter the number of course you would like more info on:"
@@ -24,7 +23,7 @@ class FirstProject::CLI
 
     if input.to_i > 0
       the_env = @envs[input.to_i-1]
-      puts "#{env.name} - #{env.availability}"
+      puts "#{the_env.name} - #{the_env.availability}"
     elsif input == "list"
       list_courses
     else
