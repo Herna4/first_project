@@ -40,8 +40,8 @@ class FirstProject::Scraper
     env = self.new
     env.title = page.search("div.inner_width clearfix").text.strip
     env.subtitle = page.search("h2.sec_title").text.strip
-    env.name = page.search().text.strip
+    # env.name = page.search().text.strip
     env.country = page.search("h2.sec_title light").text.strip
-    # binding.pry
+    binding.pry
   end
 end
