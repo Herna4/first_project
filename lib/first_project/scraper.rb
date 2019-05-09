@@ -4,12 +4,12 @@ class FirstProject::Scraper
 
   def self.today
     #return a branch of instances of environmment
-    puts <<-DOC.gsub /^\s*/, ''
-      1. Education -Still available!
-      2. Business Administration -Still available!
-      3. Computer Science -Still available!
-      4. Health Science -Still available!
-    DOC
+    # puts <<-DOC.gsub /^\s*/, ''
+    #   1. Education -Still available!
+    #   2. Business Administration -Still available!
+    #   3. Computer Science -Still available!
+    #   4. Health Science -Still available!
+    # DOC
 
     env_1 = self.new
     env_1.name = "Education"
@@ -32,7 +32,7 @@ class FirstProject::Scraper
     env_4.url = "https://www.uopeople.edu/"
 
     [env_1, env_2, env_3, env_4]
-    binding.pry
+
   end
 
 end

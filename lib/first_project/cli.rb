@@ -20,16 +20,9 @@ class FirstProject::CLI
     puts "Enter the number of course you would like more info on:"
     input = gets.strip.downcase
 
-    case input
-    when "1"
-      puts "More info about course 1..."
-    when "2"
-      puts "More info about course 2..."
-    when "3"
-      puts "More info about course 3..."
-    when "4"
-      puts "More info about course 4..."
-    when "list"
+    if input.to_i > 0
+      puts @envs[input.to_i -1]
+    elsif input == "list"
       list_courses
     else
       puts "Not sure what you want, type degree or exit."
