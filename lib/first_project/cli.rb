@@ -8,13 +8,8 @@ class FirstProject::CLI
 
   def list_courses
     puts "Welcome to our environmment"
-    puts <<-DOC.gsub /^\s*/, ''
-      1. Education -Still available!
-      2. Business Administration -Still available!
-      3. Computer Science -Still available!
-      4. Health Science -Still available!
-    DOC
-    @environmments = FirstProject::Scraper.today
+
+     @envs = FirstProject::Scraper.today
 
   end
 

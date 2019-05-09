@@ -2,4 +2,7 @@
 
 require './lib/first_project'
 
+#require "project_cli"
+#require "bundler/setup"
+
 FirstProject::CLI.new.call

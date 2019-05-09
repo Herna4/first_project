@@ -1,4 +1,4 @@
-class ProjectCli::SCRAPER
+class FirstProject::Scraper
 
   # attr_accessor :name, :available, :url
 
@@ -13,4 +13,4 @@ class ProjectCli::SCRAPER
 
   end
 
-  end
+end
