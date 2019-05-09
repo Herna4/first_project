@@ -7,7 +7,7 @@ class FirstProject::CLI
   end
 
   def list_courses
-    puts "Welcome to our environmment"
+    puts "Welcome to our environmment:"
 
     @envs = FirstProject::Scraper.today
     @envs.each.with_index(1) do |env, i|
@@ -18,7 +18,7 @@ class FirstProject::CLI
   def boby
     input = nil
     while input != "exit"
-    puts "Enter the number of course you would like more info on:"
+    puts "Enter the number of course you would like more info on or type list to see the environmment or exit:"
     input = gets.strip.downcase
 
     if input.to_i > 0

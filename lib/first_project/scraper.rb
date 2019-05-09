@@ -7,9 +7,9 @@ class FirstProject::Scraper
     self.scrape_envs
   end
 
-  def scrape_envs
+  def self.scrape_envs
     envs = []
-
+    envs << self.scrape_site
     envs
     # env_1 = self.new
     # env_1.name = "Education"
@@ -32,5 +32,10 @@ class FirstProject::Scraper
     # env_4.url = "https://www.uopeople.edu/"
     #
     # [env_1, env_2, env_3, env_4]
+  end
+
+  def self.scrape_site
+    page = Nokogiri::HTML(open("https://www.uopeople.edu/"))
+    binding.pry
   end
 end
