@@ -11,7 +11,7 @@ class FirstProject::CLI
 
     @envs = FirstProject::Scraper.today
     @envs.each.with_index(1) do |env, i|
-    puts "#{i}. #{env.name} - #{env.availabilty}"
+    puts "#{i}. #{env.name} - #{env.availability}"
    end
   end
 
@@ -23,7 +23,8 @@ class FirstProject::CLI
     input = gets.strip.downcase
 
     if input.to_i > 0
-      puts @envs[input.to_i-1]
+      the_env = @envs[input.to_i-1]
+      puts "#{env.name} - #{env.availability}"
     elsif input == "list"
       list_courses
     else
