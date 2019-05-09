@@ -9,8 +9,10 @@ class FirstProject::CLI
   def list_courses
     puts "Welcome to our environmment"
 
-     @envs = FirstProject::Scraper.today
-
+    @envs = FirstProject::Scraper.today
+    @envs.each.with_index(1) do |env, i|
+    puts "#{i}. #{env.name} - #{env.availabilty}"
+   end
   end
 
   def menu
@@ -21,7 +23,7 @@ class FirstProject::CLI
     input = gets.strip.downcase
 
     if input.to_i > 0
-      puts @envs[input.to_i -1]
+      puts @envs[input.to_i-1]
     elsif input == "list"
       list_courses
     else
