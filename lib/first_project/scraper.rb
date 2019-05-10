@@ -38,10 +38,10 @@ class FirstProject::Scraper
     page = Nokogiri::HTML(open("https://www.africanmall.com"))
 
     env = self.new
-    env.title = page.search("div.inner_width clearfix").text.strip
+    env.name = page.search(".product-image-wrapper").first.text.gsub("Buy.it", " ").strip
     env.subtitle = page.search("h2.sec_title").text.strip
     # env.name = page.search().text.strip
-    env.country = page.search("h2.sec_title light").text.strip
+    # env.country = page.search("h2.sec_title light").text.strip
     binding.pry
   end
 end
