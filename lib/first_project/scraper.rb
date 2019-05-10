@@ -1,6 +1,6 @@
 class FirstProject::Scraper
 
-   attr_accessor :name, :availability, :url
+   attr_accessor :name, :availability, :url, :title, :subtitle
 
   def self.today
     #Scraping website and returning environmments base on this data
@@ -35,7 +35,7 @@ class FirstProject::Scraper
   end
 
   def self.scrape_site
-    page = Nokogiri::HTML(open("https://www.uopeople.edu/"))
+    page = Nokogiri::HTML(open("https://www.africanmall.com"))
 
     env = self.new
     env.title = page.search("div.inner_width clearfix").text.strip
