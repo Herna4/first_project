@@ -1,6 +1,6 @@
 class FirstProject::Scraper
 
-   attr_accessor :name, :availability, :url, :title, :subtitle
+   attr_accessor :name, :availability, :url, :title, :price
 
   def self.today
     #Scraping website and returning environmments base on this data
@@ -35,13 +35,15 @@ class FirstProject::Scraper
   end
 
   def self.scrape_site
-    page = Nokogiri::HTML(open("https://www.aliexpress.com/"))
+    doc = Nokogiri::HTML(open("https://www.africanmall.com/"))
 
     env = self.new
-    env.name = page.css("h3.icon-hotproduct").text
-    env.subtitle = page.css("span.a-size-large").text.strip
-    # env.name = page.search().text.strip
-    # env.country = page.search("h2.sec_title light").text.strip
+    env.name = doc.css("#button.prolist3662 h2.product-name").text
+    env.price = doc.css("#product-price-3662.regular-price span.price").text
+    env.availability = true
+    # # env = self.new
+    # env.name = page.css("div#product-name h2").text
+    # env.subtitle = page.css("span.a-size-large").text.strip
     env
     binding.pry
   end
