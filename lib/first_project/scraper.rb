@@ -35,13 +35,14 @@ class FirstProject::Scraper
   end
 
   def self.scrape_site
-    page = Nokogiri::HTML(open("https://www.ebay.com/"))
+    page = Nokogiri::HTML(open("https://www.aliexpress.com/"))
 
     env = self.new
-    env.name = page.search("div.b-visualnav__title").text
-    env.subtitle = page.search("h2.sec_title").text.strip
+    env.name = page.css("h3.icon-hotproduct").text
+    env.subtitle = page.css("span.a-size-large").text.strip
     # env.name = page.search().text.strip
     # env.country = page.search("h2.sec_title light").text.strip
+    env
     binding.pry
   end
 end
