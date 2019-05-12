@@ -22,9 +22,9 @@ class FirstProject::CLI
     puts "Enter the number of course you would like more info on or type list to see the environmment or exit:"
     input = gets.strip.downcase
 
-    if input.to_i > 0
-      the_env = @envs[input.to_i-1]
-        puts "#{the_env.name} - #{the_env.price} - #{the_env.availability}"
+    if input.to_i > 0 && input.to_i <=2
+       the_env = @envs[input.to_i-1]
+         puts "#{the_env.name} - #{the_env.price} - #{the_env.availability}"
     elsif input == "list"
       list_courses
     else
