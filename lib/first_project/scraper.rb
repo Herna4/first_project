@@ -38,7 +38,7 @@ class FirstProject::Scraper
     doc = Nokogiri::HTML(open("https://www.africanmall.com/"))
 
     env = self.new
-    env.name = doc.css("#button.prolist3662 h2.product-name").text
+    env.name = doc.css("h1").text
     env.price = doc.css("#product-price-3662.regular-price span.price").text
     env.availability = true
     # # env = self.new

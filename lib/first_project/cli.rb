@@ -11,7 +11,7 @@ class FirstProject::CLI
 
     @envs = FirstProject::Scraper.today
     @envs.each.with_index(1) do |env, i|
-     puts "#{i}. #{env.name} - #{env.availability}"
+     puts "#{i}. #{env.name} - #{env.price} - #{env.availability}"
    end
   end
 
