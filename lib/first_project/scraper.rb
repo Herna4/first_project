@@ -10,7 +10,7 @@ class FirstProject::Scraper
   def self.scrape_envs
     envs = []
     envs << self.scrape_mall
-    envs << self.scrape_chic
+    envs << self.scrape_site
     envs
     # env_1 = self.new
     # env_1.name = "Education"
@@ -38,20 +38,20 @@ class FirstProject::Scraper
   def self.scrape_mall
     doc = Nokogiri::HTML(open("https://www.africanmall.com/jurllyshe-camouflage-slim-cami-dress.html?pid=3662&1837=11772"))
 
-    env = self.new
-    env.name = doc.css("h1.h1box").text
-    env.price = doc.css("#product-price-3662.regular-price span.price").text
-    env.availability = true
-    env
+    short_dress = self.new
+    short_dress.name = doc.css("h1.h1box").text
+    short_dress.price = doc.css("#product-price-3662.regular-price span.price").text
+    short_dress.availability = true
+    short_dress
   end
 
-  def self.scrape_chic
+  def self.scrape_site
     doc = Nokogiri::HTML(open("https://www.ebay.com/itm/Microspareparts-Mobile-iPhone-7-LCD-Assembly-White-MOBX-IPO7GP-LCD-W-H-NEW/362625346140?hash=item546e27aa5c:g:FtsAAOSwU8Rcum2P"))
 
-    env = self.new
-    env.name = doc.css("h1.it-ttl").text
-    env.price = doc.css("span.notranslate").text
-    env.availability = true
-    env
+    gadget_7 = self.new
+    gadget_7 .name = doc.css("h1.it-ttl").text
+    gadget_7 .price = doc.css("span.notranslate").text
+    gadget_7 .availability = true
+    gadget_7
   end
 end
