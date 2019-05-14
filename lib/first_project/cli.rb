@@ -2,7 +2,7 @@ class FirstProject::CLI
 
   def call
     articles
-    boby
+    body
     byebye
   end
 
@@ -19,11 +19,10 @@ class FirstProject::CLI
   #  end
   end
 
-  def boby
+  def body
     input = ""
     while input != "exit"
-    puts "Enter the number of article you'd like getting info or type view to see the articles or exit:"
-    # puts "Enter the number of course you would like more info on or type list to see the environmment or exit:"
+    puts "Enter the number of article you'd like getting info or type view to see articles or exit:"
     input = gets.strip.downcase
 
     if input.to_i > 0 && input.to_i <=3
