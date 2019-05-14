@@ -12,6 +12,7 @@ class FirstProject::CLI
     @envs = FirstProject::Scraper.today
     puts "1. Get info about Dress"
     puts "2. Get info about Gadget"
+    puts "3. Get info about Hotel"
     # @envs.each.with_index(1) do |env, i|
     #  puts "#{i}. #{env.name} - #{env.price} - #{env.availability}"
 
@@ -25,7 +26,7 @@ class FirstProject::CLI
     # puts "Enter the number of course you would like more info on or type list to see the environmment or exit:"
     input = gets.strip.downcase
 
-    if input.to_i > 0 && input.to_i <=2
+    if input.to_i > 0 && input.to_i <=3
        the_env = @envs[input.to_i-1]
          puts "#{the_env.name} - #{the_env.price} - #{the_env.availability}"
     elsif input == "view"

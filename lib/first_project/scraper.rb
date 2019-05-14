@@ -11,6 +11,7 @@ class FirstProject::Scraper
     envs = []
     envs << self.scrape_mall
     envs << self.scrape_site
+    envs << self.scrape_details
     envs
     # env_1 = self.new
     # env_1.name = "Education"
@@ -54,4 +55,15 @@ class FirstProject::Scraper
     gadget_7 .availability = true
     gadget_7
   end
+
+  def self.scrape_details
+    doc = Nokogiri::HTML(open('https://www.tripadvisor.com/Hotel_Review-g147307-d7592296-Reviews-Marriott_Port_au_Prince_Hotel-Port_au_Prince_Ouest_Department_Haiti.html'))
+
+      hotel = self.new
+      hotel.name = doc.css("h1.ui_header").text
+      hotel.price = doc.css("span.xthrough").text
+      hotel.availability = true
+      hotel
+    end
+
 end
